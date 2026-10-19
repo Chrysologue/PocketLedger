@@ -1,0 +1,240 @@
+[Full Name]
+[City, Madagascar] | [Your phone Number] | [Your email Address] | [Your LinkedIn URL] | [Your GitHub / Portfolio URL]
+
+Professional Summary
+Operations hybrid with 6 years of high-volume transaction processing and financial dispute management backed by  enterprise workflows (Worldline infrastructure). Proven capability in bank statement matching, clearing exceptions, and chargeback lifecycles. Currently in the 3rd year of Software Development degree (BYU-Idaho), bringing active proficiency in TypeScript, Node.js/Express, PostgreSQL, JavaScript and MongoDB. Uniquely positioned to optimize payment pipelines, bridge operational workflows with engineering logic, and troubleshoot backend ledger discrepancies for remote-first fintech and tech environments.
+
+Technical & operational Arsenal
+	.Payment & Financial Operations: High-volume bank statement reconciliation, Multi-system Transaction Mapping, Exception/Rejection Handling, End-to-End Dispute Management, Chargeback Life-Cycle Execution, Merchant Settlement Audits.
+	.Backend & Database Stack: TypeScript, JavaScript, Node.js, Express.js, PostgreSQL, MongoDB, RESTful APIs, Git/GitHub Version Control.
+	.Operation Tooling: Proprietary Ledger & Clearing Tools, Internal Data Dashboards, Ticketing Systems, Structured Logging
+
+Professional Experience
+Payment Operations & Transaction Processing Specialist (Worldline-Linked Workflow)
+[Company Name] | July 2020 - Present
+	Core Ledger Reconciliation: Executed daily bank statement matching
+across large volumes of external financial records against internal
+ledger environments, ensuring zero-discrepancy financial tracking.
+
+	Exception & Reject Engineering: Audited and manually resolved
+complex transaction rejections and clearing failures using proprietary
+processing software, identifying root causes for unmatched data.
+
+	Dispute & Risk Management: Managed the full life-cycle of
+international merchant disputes, executing high-stakes chargebacks,
+fund retrievals, and fraud verifications in strict compliance with global
+payment networks.
+
+	Data Integrity & Reporting: Maintained meticulous transaction status
+logs and daily statement summaries, serving as a reliable operational
+anchor for financial reporting accuracy.
+
+Global Customer Support & Operations Agent
+Homerez (International Seasonal Rental Platform) | January 2020 - June
+2020
+
+	Handled time-sensitive cross-border customer operations across
+global markets, managing booking lifecycles, cancellations, and multi-
+currency financial refunds.
+
+	Resolved escalated account and transaction inquiries through
+structured ticketing environments under strict SLA guidelines.
+
+Education & Technical Projects
+B.S. in Software Development (Online)
+Brigham Young University-Idaho | Expected Graduation / In Progress (3rd
+Year)
+
+Relevant Coursework & Competencies: Relational and non-relational
+database design (PostgreSQL, MongoDB), REST API architecture, and
+server-side logic using TypeScript/Express.
+
+Selected Portfolio Projects (Backend Focused):
+
+Built custom CRUD APIs and structured database models
+(PostgreSQL/MongoDB) designed to handle mock user data,
+transaction logs, and error-handling workflows.
+
+Applied software logic principles to automate data validation and
+minimize runtime discrepancies.
+
+HOW TO APPY
+
+Step 1: Find the job on Linkedln
+Open Linkedln, go to the Jobs tab, and search for your keywords (e.g.,
+"Payment Operations Remote" or "Transaction Reconciliation").
+
+Click on a job posting that interests you.
+
+Step 2: Look for the "Apply" button (Don't click Easy Apply)
+If a job has a blue "Easy Apply" button, do not click it. That is the
+automated shortcut that dumps your resume into a massive pile.
+
+Instead, look right next to it or slightly below it for a button that says
+"Apply" (sometimes with a little external arrow icon pointing away from
+a square, like this: ).
+
+
+Step 3: Click through to the company's Career Portal
+When you click that regular "Apply" button, Linkedln will open a new
+tab in your internet browser and redirect you away from Linkedln.
+
+It will take you directly to the company's official website (usually a page
+ending in something like careers. companyname. com or
+boards.greenhouse.io/companyname ).
+
+Step 4: Submit your application on their system
+Once you are on their official website, you will fill out their form. They
+usually use secure hiring software like Greenhouse, Workday, or Lever
+(these are trusted, standard company software tools, not scams).
+
+Upload the tailored resume we built for you, fill in your details, and
+submit.
+
+*******************************************************************
+The Hurdles That Could Lower Your Chances (And How to Beat
+Them)
+The Location Filter (Madagascar): Some automated HR systems reject
+international applicants if the company only wants to hire locally.
+
+How to beat it: Never lie about where you live, but explicitly state
+on your CV or profile that you are available as an Independent
+Contractor ready to onboard via Deel or Remote.com. This
+completely neutralizes the legal excuse companies use to filter
+out applicants from Africa.
+
+Applying to the Wrong Roles: If you apply for "Senior Software
+Engineer," you will get rejected immediately because you haven't
+worked professionally as a coder yet.
+
+How to beat it: Stick strictly to roles like Payment Operations
+Specialist, Transaction Reconciliation Analyst, Risk & Fraud
+Operations Associate, or Fintech Support Analyst.
+
+*************************************************************
+JOB TITLE TO TARGET
+1. Primary Target Titles (Best Match for Your 6 Years Experience)
+Payment Operations Analyst / Specialist
+
+Transaction Reconciliation Analyst
+
+Dispute & Chargeback Operations Specialist
+
+Fintech Operations Associate
+
+Risk and Fraud Operations Analyst
+
+Ledger Operations Specialist Centaur Careers
+
+2. Secondary Target Titles (Leveraging Your Software Studies)
+Because you understand database logic (PostgreSQL/MongoDB) and
+backend scripts (TypeScript/Node.js) alongside payments, you can also look
+for:
+
+Technical Operations Analyst (Tech-Ops)
+Payment Support Engineer / Operations
+
+Billing & Settlement Operations Specialist
+
+Keywords to Use in Search Bars
+When typing into Linkedln Jobs or remote portals, combine these keywords
+to filter out the noise:
+
+"Payment Operations" remote
+
+"Transaction Reconciliation" remote
+
+"Dispute Operations" remote
+
+"Fintech Operations" remote
+
+PLATFROM TO APPLY
+Your 3 Free Tools for Finding Remote Jobs
+LinkedIn (Free Public Search)
+
+Cost: Free.
+
+What to avoid: Do not buy Linkedln Premium. Ignore the "Try
+Premium for free" buttons.
+
+Remotive (Free Public Board Only)
+
+Cost: Free.
+
+What to avoid: Do not join the "Remotive Accelerator" or click any
+pop-up asking for a credit card. Use only their free public listing
+page.
+
+Direct Company Career Pages via Google
+
+Cost: Free.
+
+What it is: Going straight to a fintech company's official website
+to apply. (This is actually the highest-success method).
+
+Step-by-Step Guide: How to Apply for Free
+Method A: Using Remotive (Free Public Board)
+Open your internet browser and go to remotive.com.
+
+Scroll or look for their Public Job Board.
+
+Use the search bar to type: Payment Operations, Reconciliation,
+or Finance .
+
+When you see a job you like, click on it.
+
+Look for the button that says "Apply for this job" or an external link
+icon.
+
+It will take you straight to the company's official hiring page (like
+Greenhouse, Lever, or Workday). Fill out their form and submit your
+tailored resume. This is entirely free.
+
+Method B: Using Linkedln (Free Search)
+Open Linkedln and go to the Jobs tab (make sure you are logged into
+your free account).
+
+Type your exact keywords into the search bar:
+
+"Payment Operations" remote
+
+"Transaction Reconciliation" remote
+
+Filter the location to Remote (or leave it global).
+
+Click on a job posting.
+
+Look at the application button:
+
+If it says "Easy Apply": You can click it to submit quickly through
+Linkedln.
+
+If it has an external link/arrow: Click it to go to the company's
+official website and apply there.
+
+
+Method C: Direct Company Sourcing (The Best Free Method)
+Instead of looking at job boards that might try to upsell you, go straight to
+the source:
+
+Think of or search for mid-sized cross-border fintech companies,
+crypto-to-fiat ramps, or digital payment providers that hire remote
+staff globally (for example: Yellow Card, Chipper Cash, or other cross-
+border platforms).
+
+Type into Google: [Company Name] careers (Example: Yellow Card
+careers).
+
+Click on their official careers page.
+
+Look for an open role in Operations, Risk, or Compliance, and submit
+your resume directly through their form for free.
+
+
+Your Golden Rule
+If any website, platform, or link asks you to pay a registration fee, buy a
+monthly pass, or send money to apply: Close the tab immediately. Real
+companies hiring for remote operations positions never charge candidates
+money to apply.
+
+
