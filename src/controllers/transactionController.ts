@@ -71,44 +71,86 @@ export const transactionController: TransactionController = {
       return res.status(500).json({ error: 'Internal server error' });
     }
   },
-  getTransactionById: async(req: Request<{id: string}>, res: Response) => {
-    try{
-        const userId = req.user?.id as string
-        const id = req.params.id as string
+  getTransactionById: async (req: Request<{ id: string }>, res: Response) => {
+    try {
+      const userId = req.user?.id as string;
+      const id = req.params.id as string;
 
-        const transaction = await Transaction.findOne({_id: id, user: userId})
-        if(!transaction){
-            return res.status(404).json({error: "Transaction not found"})
-        }
-        return res.status(200).json(transaction)
-    }catch (err) {
+      const transaction = await Transaction.findOne({ _id: id, user: userId });
+      if (!transaction) {
+        return res.status(404).json({ error: 'Transaction not found' });
+      }
+      return res.status(200).json(transaction);
+    } catch (err) {
       console.error(err);
       return res.status(500).json({ error: 'Internal server error' });
     }
   },
-  updateTransaction: async(req: Request<{id: string}, {}, UpdateTransaction>, res: Response) =>{
-    try{
-        const userId = req.user?.id as string
-        const transId = req.params.id as string
+  updateTransaction: async (
+    req: Request<{ id: string }, {}, UpdateTransaction>,
+    res: Response
+  ) => {
+    try {
+      const userId = req.user?.id as string;
+      const transId = req.params.id as string;
 
-        const updates = {} as UpdateTransaction
-        if(req.body.amount !== undefined){
-            updates.amount = req.body.amount
-        }
-        if(req.body.description !== undefined){
-            updates.description = req.body.description
-        }
-        if(req.body.date !== undefined){
-            updates.date = req.body.date
-        }
-        if(req.body.type !== undefined){
-            updates.type = req.body.type
-        }
+      const updates = {} as UpdateTransaction;
+      if (req.body.amount !== undefined) {
+        updates.amount = req.body.amount;
+      }
+      if (req.body.description !== undefined) {
+        updates.description = req.body.description;
+      }
+      if (req.body.date !== undefined) {
+        updates.date = req.body.date;
+      }
+      if (req.body.type !== undefined) {
+        updates.type = req.body.type;
+      }
+      if (req.body.category !== undefined) {
+        updates.category = req.body.category;
+      }
 
-        const transaction = await Transaction.findOneAndUpdate({_id: transId, user: userId})
-    }catch (err) {
+      const transaction = await Transaction.findOneAndUpdate(
+        {
+          _id: transId,
+          user: userId,
+        },
+        { $set: updates },
+        { new: true, runValidators: true }
+      );
+      if (!transaction) {
+        return res.status(404).json({ error: 'Transaction not found' });
+      }
+      return res
+        .status(200)
+        .json({ message: 'Transaction updated successfully', transaction });
+    } catch (err) {
       console.error(err);
       return res.status(500).json({ error: 'Internal server error' });
     }
-  }
+  },
+  deleteTransaction: async (
+    req: Request<{ id: string }, {}, UpdateTransaction>,
+    res: Response
+  ) => {
+    try {
+      const userId = req.user?.id as string;
+      const transId = req.params.id as string;
+      const deletedTransaction = await Transaction.findOneAndDelete({
+        _id: transId,
+        user: userId,
+      });
+      if (!deletedTransaction) {
+        return res.status(404).json({ error: 'Transaction not found' });
+      }
+      return res.status(200).json({
+        message: 'Transaction deleted successfully',
+        transaction: deletedTransaction,
+      });
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({ error: 'Internal server error' });
+    }
+  },
 };

@@ -10,10 +10,11 @@ export interface CreateTansaction {
 }
 
 export interface UpdateTransaction {
-  amount: number;
+  amount?: number;
   description?: string;
-  date: Date;
-  type: Type;
+  date?: Date;
+  type?: Type;
+  category?: string;
 }
 
 export interface TransactionController {
