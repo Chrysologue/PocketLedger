@@ -1,0 +1,6 @@
+ const filter = {}
+ To tell TS that this object is allowed to have a dynamic properties added to it,
+ you just need to explicitly type it when you declare it.
+ const filter: Record<string, any> = {};
+ Record<K, T>: A built-in TypeScript utility used to construct an object type 
+ whose property keys are K and whose property values are T

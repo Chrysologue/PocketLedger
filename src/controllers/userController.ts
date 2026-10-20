@@ -17,9 +17,9 @@ export const userController: UserController = {
       if (!name || !email || !password) {
         return res.status(400).json({ error: 'All fields are required' });
       }
-      const isExisting = await User.findOne({email})
-      if(isExisting){
-        return res.status(409).json({error: "Email already exists"})
+      const isExisting = await User.findOne({ email });
+      if (isExisting) {
+        return res.status(409).json({ error: 'Email already exists' });
       }
       const hashedPassword = await bcrypt.hash(password, 10);
       const user = await User.create({

@@ -1,0 +1,22 @@
+###Create Categories
+
+POST http://localhost:8800/api/categories
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZDY0NjUwNTYwNWFhMGU2OGIwNDM2MCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzkyNDgxOTc2LCJleHAiOjE3OTI0ODU1NzZ9.eYTfu9JA07I3dJS8kg5RCjkWjuTJTm-gBnAo_JrLnTY
+Content-Type: application/json
+
+{
+    "name": "Salary",
+    "type": "income"
+  }
+
+### Get All Categories
+GET http://localhost:8800/api/categories?type=income
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZDY0NjUwNTYwNWFhMGU2OGIwNDM2MCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzkyNDgxOTc2LCJleHAiOjE3OTI0ODU1NzZ9.eYTfu9JA07I3dJS8kg5RCjkWjuTJTm-gBnAo_JrLnTY
+
+###Get specific expense
+GET http://localhost:8800/api/categories/6ad71ba43471081e18dfa5b4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZDY0NjUwNTYwNWFhMGU2OGIwNDM2MCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzkyNDgxOTc2LCJleHAiOjE3OTI0ODU1NzZ9.eYTfu9JA07I3dJS8kg5RCjkWjuTJTm-gBnAo_JrLnTY
+
+###Delete specific expense
+DELETE  http://localhost:8800/api/categories/6ad71ae83471081e18dfa5b3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZDY0NjUwNTYwNWFhMGU2OGIwNDM2MCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzkyNDgxOTc2LCJleHAiOjE3OTI0ODU1NzZ9.eYTfu9JA07I3dJS8kg5RCjkWjuTJTm-gBnAo_JrLnTY
