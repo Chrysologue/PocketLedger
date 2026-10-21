@@ -4,3 +4,32 @@
  const filter: Record<string, any> = {};
  Record<K, T>: A built-in TypeScript utility used to construct an object type 
  whose property keys are K and whose property values are T
+
+ /********Ho to delete cascade***/
+ import mongoose from 'mongoose';
+import Transaction from './Transaction.js'; // Import your Transaction model
+
+const categorySchema = new mongoose.Schema(
+  {
+    name: { type: String, required: true },
+    type: { type: String, required: true, enum: ['income', 'expense'] },
+    user: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User' },
+  },
+  { timestamps: true }
+);
+
+// CASCADE DELETE MIDDLEWARE
+categorySchema.pre('findOneAndDelete', async function (next) {
+  // Get the category filter/query that is about to be deleted
+  const query = this.getQuery();
+  const categoryId = query._id;
+
+  if (categoryId) {
+    // Automatically delete all transactions associated with this category
+    await Transaction.deleteMany({ category: categoryId });
+  }
+  
+  next();
+});
+
+export default mongoose.model('Category', categorySchema);

@@ -7,6 +7,6 @@
   {
     "name": "John Smith",
     "email": "john@example.com",
-    "password": "AnotherPassword456"
+    "password": "AnotherPassword456*"
   }
 ]

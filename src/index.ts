@@ -5,13 +5,17 @@ import { connectToDB } from './config/db.js';
 import userRoute from './routes/user.js';
 import categoryRoute from './routes/category.js';
 import transactionRoute from './routes/transaction.js';
+import { swaggerDoc } from './docs/swagger.js';
+import swaggerUi from 'swagger-ui-express'
 
 const app = express();
 const port = process.env.PORT;
 app.use(express.json());
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDoc))
 app.use('/api/users', userRoute);
 app.use('/api/categories', categoryRoute);
 app.use('/api/transactions', transactionRoute);
+
 
 app.get('/', (req: Request, res: Response) => {
   return res.status(200).json({ message: 'Welcome to Expense Tracker API' });
