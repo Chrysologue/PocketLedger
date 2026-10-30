@@ -1,0 +1,211 @@
+https://playcode.io/sql-playground
+https://aiven.io/tools/pg-playground
+https://onecompiler.com/postgresql
+https://dbfiddle.dev/postgres?checkpoint=1793098719
+**********************************************************************
+Completed: Filtering and basic data handling
+
+IN, LIKE, ILIKE, NULL, NOT, DISTINCT, COALESCE, NULL sorting
+
+Topic 1 — Advanced filtering logic
+
+AND, OR, NOT, parentheses, operator precedence, three-valued logic
+
+
+Completed Topic 2 — Advanced sorting and pagination
+
+ORDER BY, multiple sort keys, LIMIT, OFFSET, deterministic ordering
+
+Completed Topic 3 — Aggregate functions
+
+COUNT, SUM, AVG, MIN, MAX and NULL behavior
+
+Completed Topic 4 — GROUP BY and HAVING
+
+Business summaries, grouped conditions, aggregate reasoning
+
+Topic 5 — Joins
+
+INNER, LEFT, RIGHT, FULL, self joins and join pitfalls
+
+Later — Intermediate to advanced PostgreSQL
+
+Subqueries, CTEs, CASE, date/time, string functions, set operations, window functions, indexes, query plans, transactions, constraints, and database design.
+************************************************************************************
+
+IN — Match against multiple values
+	WHERE category IN ('Electronics', 'Furniture')
+LIKE and ILIKE — Search text patterns
+Business request: Find product names that start with the letter B
+	WHERE product_name LIKE 'B%'
+	Pattern symbols:
+		% — matches zero or more characters.
+		_ — matches exactly one character.
+		LIKE — performs a case-sensitive pattern match in PostgreSQL
+		ILIKE — performs a case-insensitive pattern match in PostgreSQL.
+	-- Contains the word "Desk"
+	WHERE product_name LIKE '%Desk%';
+	-- Ends with "Cable"
+	WHERE product_name LIKE '%Cable';
+	-- Second character is "o"
+	WHERE product_name LIKE '_o%';
+	-- Starts with "laptop", ignoring case
+	WHERE product_name ILIKE 'laptop';
+
+IS NULL — Find missing values
+In databases, missing information is represented by NULL. It is not the same as zero or an empty string.
+	WHERE category IS NULL
+To find rows where a value is present:
+	WHERE category IS NOT NULL;
+Important: category = NULL is not the correct way to test for missing values.
+
+NOT — Reverse a condition
+	WHERE NOT (category = 'Furniture');
+	WHERE category <> 'Furniture';
+DISTINCT — Find unique values
+Business request: Which product categories exist in the catalogue?
+	SELECT DISTINCT category
+	FROM products;
+COALESCE — Handle missing values in output
+COALESCE as a safety net for missing information in a database.
+	SELECT product_name, 
+    	COALESCE(category, 'Uncategorized') AS category 
+	FROM products;
+You are telling SQL: "Look at the category column. If it's a real category, use it. If it's NULL, replace it with 'Uncategorized'."
+
+COALESCE returns the first non-null expression in the list, and all expressions must share a compatible data type
+	COALESCE(CAST(price AS VARCHAR), 'Price unavailable') AS price_display 
+	FROM products;
+
+SORT VALUE BY NULL
+
+To put NULL values at the very top:
+	ORDER BY price ASC NULLS FIRST;
+To put NULL values at the very bottom:
+	
+	ORDER BY price ASC NULLS LAST;
+*****************************************************************
+*****************************************************************
+Topic 1 — Advanced filtering logic
+**********************************
+OFFSET — Skip rows
+Skip the three most expensive products and show the next three.
+	LIMIT 3 OFFSET 3;
+ -LIMIT 3 means return at most three rows.
+
+ -OFFSET 3 means skip the first three rows after sorting.
+OFFSET=(page−1)×page size
+****************************************************************
+****************************************************************
+Topic 3 — Aggregate functions and GROUP BY
+******************************************
+COUNT() — count rows and values
+COUNT(*) counts rows, regardless of whether individual columns contain NULL
+	SELECT COUNT(price)
+This counts only rows where price is not NULL.
+
+SUM() — calculate totals
+	SELECT SUM(price)
+SUM() ignores NULL values. It adds the known prices together rather than treating missing prices as zero.
+
+AVG() — calculate averages
+	SELECT AVG(price)
+PostgreSQL calculates the average using non-NULL prices only.
+
+MIN() and MAX() — find extremes
+	SELECT
+    		MIN(price) AS cheapest_price,
+    		MAX(price) AS highest_price
+Both functions ignore NULL values when known values exist.
+
+	GROUP BY — summarize data by category
+
+	HAVING — filter groups using aggregate results
+
+The number of rows with a missing price.
+	*********************************************************
+	*COUNT(*) FILTER (WHERE price IS NULL) AS missing_prices*
+	*FROM products;						*
+	*********************************************************
+ROUNDING NUMBER
+	ROUND(AVG(price), 2) AS average_price,
+****************************************************************
+****************************************************************
+Topic 4 — GROUP BY and HAVING
+*****************************
+GROUP BY: combine rows into groups
+Rule A: Non-aggregated selected columns must be grouped
+Rule B: Aggregate functions operate within each group
+Rule C: HAVING does not require GROUP BY in every possible query
+	
+	******************************************************
+	*SELECT country, state, city, SUM(amount) AS revenue *
+	*FROM orders					     *
+	*GROUP BY country, state, city;			     *
+	******************************************************
+HAVING: filter groups
+	******************************************************
+	*SELECT country, state, city, SUM(amount) AS revenue *
+	*FROM orders					     *
+	*GROUP BY country, state, city			     *
+	*HAVING SUM(amount) > 1000;			     *
+	******************************************************
+Here is the exact order of clauses when you write a full SQL query:
+
+SELECT (What columns you want to see)
+
+FROM (What table you are querying)
+
+WHERE (Filtering individual rows before grouping)
+
+GROUP BY (Sorting rows into buckets)
+
+HAVING (Filtering the groups after aggregation)
+
+ORDER BY (Sorting the final results)
+
+LIMIT / OFFSET (Paging the final results)
+*****************************************************************
+****************************************************************
+Topic 5 — Joins
+A. INNER JOIN
+*************
+An INNER JOIN returns only records that have a matching value in both tables.
+	Real-world application: Finding customers who have actually purchased something.
+
+B. LEFT JOIN
+************
+A LEFT JOIN returns:
+	Every record from the left table.
+	Matching records from the right table.
+	NULL values where no matching right-side record exists.
+Real-world application: Finding customers who have never purchased anything.
+	SELECT customers.*
+	FROM customers
+	LEFT JOIN orders
+    		ON customers.customer_id = orders.customer_id
+	WHERE orders.order_id IS NULL;
+
+C. RIGHT JOIN
+**************
+A RIGHT JOIN preserves every row from the right table, even if there is no matching record in the left table.
+D. FULL OUTER JOIN
+******************
+A FULL OUTER JOIN returns:
+	Matching records.
+	Unmatched records from the left table.
+	Unmatched records from the right table.
+
+E. SELF JOIN
+************
+A self join is when you join a table to itself. 
+For example, imagine you want to find products belonging to the same category.
+
+SELECT
+    p1.product_name AS product_one,
+    p2.product_name AS product_two,
+    p1.category
+FROM products p1
+INNER JOIN products p2
+    ON p1.category = p2.category
+WHERE p1.product_id < p2.product_id;
