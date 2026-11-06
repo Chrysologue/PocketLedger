@@ -84,6 +84,17 @@ To put NULL values at the very top:
 To put NULL values at the very bottom:
 	
 	ORDER BY price ASC NULLS LAST;
+
+CONCATENATING VALUE OF TWO COLUMNS
+1. Using the Concatenation Operator (||) — Most Common
+SELECT 
+    first_name || ' ' || last_name AS full_name
+FROM customers;
+2. Using the CONCAT() Function — Safer with NULLs
+SELECT 
+    CONCAT(first_name, ' ', last_name) AS full_name
+FROM customers;
+
 *****************************************************************
 *****************************************************************
 Topic 1 — Advanced filtering logic

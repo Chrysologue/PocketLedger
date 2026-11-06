@@ -1,0 +1,156 @@
+AUTOFILL AND FILL SERIES
+************************
+**Type 1 in a cell and 2 in below cell, select both and drag
+Excel will autofill the number by counting.
+**Type 1 in a cell and 2 in other cell, color the cell 2 and
+select both cells and drag, Excel will fill color accordingly.
+**Type 04-Jul-26 in a cell, then drag, Excel will autofill the date
+To skip weekend, click Auto Fill Options at the bottom, then choose
+fill weekdays.
+***Type January in a cell and drag, I will autofill the month 
+
+	FILL SERIES
+	************
+Do list of number that goes up to 37500. if we go by 100, 200, 300
+then drag it, It will take time.
+Use Fill Series
+	-Type 100 in a cell
+	-Select Home Tab, and Fill, and select series
+	-Under Series In, select column
+	-Type start value and type end value
+	
+	FILL SERIES WITH EXPONENTIAL GROWTH
+	************************************
+Fill series function can be used to create list that grows exponentially
+To make a list that starts at 2 and grows to 100000 exponentially:
+	-Select empty cell
+	-Select Home tab, Select Fill, and Series
+	-In Series In, select columns
+	-Under Type select Growth
+	-Step value is 2
+	-Stop value is 100000
+
+GROUPING AND UNGROUPING COLUMNS 
+*******************************
+Grouping columns
+	1-Select columns you want to group
+	2-Select Data tab on toolbar
+	3-Select group
+		a-A grouping bar will appear above the grouped columns
+Ungrouping columns
+	1-Select grouped column
+	2-Select Data tab
+	3-Select Ungroup
+		a-The columns will be ungrouped, and 
+the grouping bar will disappear.
+
+GROUPING AND UNGROUPING COLUMNS  is the same process as
+GROUPING AND UNGROUPING ROWS 
+
+PASTE SPECIAL
+************
+	Paste All: will paste the copied data with all formulas, 
+values, and other formatting intact
+	Paste Formulas:  will paste the copied data with all formulas 
+intact, but values and other formatting will not be kept.
+	Paste Values: will paste the copied data with all values intact, 
+but formulas and other formatting will not be kept.
+	Paste Formats:  will paste the copied data with all formatting 
+intact, but formulas and values will not be kept.
+	Paste Transpose: will swap table data on the y and x-axis planes. 
+Data displayed across the first row will be pasted vertically in the
+first column and so on.
+
+RANKING
+********
+To find the third-largest in array.
+	1.Type =LARGE
+	2.Select all the values in the same range, replace k with 3
+To find fourth smallest in array
+	1.Type =SMALL
+	2.Select all the values in the same range, replace k with 4
+FLOOR.MATH() = To floor number
+CEIL.MATH() = To ceil number
+COUNTA() = To count non-numerical data—textual data
+CountBlank() = To count the number of blank cells in a data set
+
+MANAGING WORKSHEETS
+*********************
+Referencing Cells Across Worksheets
+
+***************
+LOKUP FUNCTIONS
+****************
+	VLOOKUP
+	********
+=VLOOKUP(lookup_value,table_array,col_index_num,FALSE)
+	.lookup_value: What you want to find
+	.table_array: The table where Excel searches
+	.col_index_num: The column containing the answer
+	.FALSE: Find an exact match
+
+1-Type =VLOOKUP
+	a-The V stands for vertical lookup.
+2-Select the cell that contains the value that you want to look up.
+3-Add a comma.
+	A.Excel will next need to know what table array you would 
+like to look in.
+4-Select the Ingredient List tab.
+5-Select the entire table and add another comma
+6-Type in the index number.
+7-Type False or 0 to get an exact match.
+rules of VLOOKUP:
+	.It can only look down the first column you give it
+	.Once it finds your item, it can only look to the 
+right to grab your answer.
+	.It can never look to the left.
+	.The item you are looking for must be in the 
+absolute first column of the specific range you select.
+TO FIX THE LEADINg AND TRAILING SPACE, USE =VLOOKUP(TRIM(B2),$H$2:$I$13,2,FALSE)
+
+	TO FIX MISSING VALUE N/A
+	************************
+Use IFERROR with VLOOKUP to handle missing value
+IFERROR means "IF there is an ERROR, show something else instead."
+	.value: The formula you want Excel to calculate.
+	.value_if_error: What Excel should display if that formula produces an error.
+=IFERROR(VLOOKUP(B2,$H$2:$I$13,2,FALSE),"Missing")
+
+	.VLOOKUP(...) searches for the item and returns its price.
+	.IFERROR(...) checks whether the formula produces an error.
+	."Missing" displays whenever the item cannot be found.
+If you only want to replace #N/A errors while allowing other errors to show, use:
+=IFNA(VLOOKUP(B2,$H$2:$I$13,2,FALSE),"Missing")
+
+ Basic IF–ELSE formula
+=IF(condition, value_if_true, value_if_false)
+	.IF: Check a condition.
+	.TRUE: Do something if the condition is met.
+	.ELSE: Do something if the condition is not met.
+
+TO CALCULATE SUM OF DUPLICATE VALUE USE SUMIF
+=SUMIF(range,criteria,sum_range)
+	.range: Where Excel must search for the customer ID.
+	.criteria: The customer ID you want to find.
+	.sum_range: The outstanding balances Excel must add.
+
+	XLOOKUP
+	*******
+XLOOKUP is an Excel function that searches for a specific 
+value in a table and returns related information from another 
+column or row.
+=XLOOKUP(lookup_value,lookup_array,return_array,if_not_found)
+	. Lookup_value: What are you searching for?
+	. Lookup_array: Which column should Excel search in?
+	.Return_array: Which column contains the information
+you want Excel to return?
+	.If_not_found: What should Excel display if it cannot find the ingredient?
+
+	
+XLOOKUP VS VLOOKUP
+******************
+VLOOKUP: Searches the first column of the selected table and returns 
+information to its right.
+XLOOKUP: Searches a specified column or row and returns information 
+from another specified column or row, whether it is to the left, 
+right, above or below.
